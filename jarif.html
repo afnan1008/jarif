@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0d0d0f">
+
+<title>Happy Birthday ❤️</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+:root{
+  --bg:#09090b;
+  --card:#121216;
+  --text:#fff;
+  --muted:#aaaab2;
+  --pink:#ff2d76;
+  --purple:#8a3ffc;
+  --orange:#ff8a00;
+}
+
+html{scroll-behavior:smooth}
+
+body{
+  min-height:100vh;
+  background:
+    radial-gradient(circle at 15% 15%,rgba(138,63,252,.16),transparent 30%),
+    radial-gradient(circle at 85% 70%,rgba(255,45,118,.13),transparent 30%),
+    var(--bg);
+  color:var(--text);
+  font-family:"Inter","Hind Siliguri",sans-serif;
+  overflow-x:hidden;
+}
+
+button{font:inherit}
+
+.bgGlow{
+  position:fixed;
+  width:350px;
+  height:350px;
+  border-radius:50%;
+  filter:blur(100px);
+  pointer-events:none;
+  opacity:.18;
+}
+
+.glow1{
+  background:#ff2d76;
+  top:-130px;
+  left:-100px;
+}
+
+.glow2{
+  background:#6c40ff;
+  right:-120px;
+  bottom:-100px;
+}
+
+.app{
+  width:min(100%,470px);
+  min-height:100vh;
+  margin:auto;
+  background:rgba(9,9,11,.78);
+  border-left:1px solid rgba(255,255,255,.05);
+  border-right:1px solid rgba(255,255,255,.05);
+  position:relative;
+  box-shadow:0 0 70px rgba(0,0,0,.45);
+}
+
+/* Story */
+
+.story{
+  min-height:100svh;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  background:#111;
+}
+
+.storyImage{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:.69;
+  transform:scale(1.03);
+  animation:zoom 10s ease-in-out infinite alternate;
+}
+
+@keyframes zoom{
+  to{transform:scale(1.11)}
+}
+
+.overlay{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(to bottom,rgba(0,0,0,.55),rgba(0,0,0,.04) 35%,rgba(0,0,0,.25) 60%,rgba(0,0,0,.92));
+}
+
+.progressWrap{
+  display:flex;
+  gap:4px;
+  padding:12px 10px 0;
+  position:relative;
+  z-index:2;
+}
+
+.progress{
+  flex:1;
+  height:3px;
+  background:rgba(255,255,255,.3);
+  overflow:hidden;
+  border-radius:10px;
+}
+
+.progress:first-child::after{
+  content:"";
+  display:block;
+  height:100%;
+  width:100%;
+  background:white;
+  transform-origin:left;
+  animation:storyProgress 8s linear infinite;
+}
+
+@keyframes storyProgress{
+  from{transform:scaleX(0)}
+  to{transform:scaleX(1)}
+}
+
+.header{
+  position:relative;
+  z-index:3;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:13px 16px;
+}
+
+.avatarRing{
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  padding:2px;
+  background:linear-gradient(45deg,#ffd600,#ff7a00,#ff0169,#d300c5,#7638fa);
+}
+
+.avatar{
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  border:2px solid #121212;
+  object-fit:cover;
+}
+
+.username{
+  font-size:14px;
+  font-weight:600;
+}
+
+.time{
+  color:#ddd;
+  font-size:12px;
+  margin-left:5px;
+}
+
+.music{
+  margin-left:auto;
+  border:0;
+  width:39px;
+  height:39px;
+  border-radius:50%;
+  color:white;
+  cursor:pointer;
+  background:rgba(255,255,255,.13);
+  backdrop-filter:blur(12px);
+  transition:.25s;
+}
+
+.music:hover{
+  background:rgba(255,255,255,.25);
+  transform:scale(1.05);
+}
+
+.hero{
+  position:relative;
+  z-index:2;
+  margin-top:auto;
+  padding:30px 25px 45px;
+  text-align:center;
+}
+
+.small{
+  font-size:13px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  opacity:.85;
+  margin-bottom:9px;
+}
+
+.hero h1{
+  font-size:clamp(38px,11vw,56px);
+  line-height:1.02;
+  font-weight:800;
+  text-shadow:0 8px 30px rgba(0,0,0,.5);
+}
+
+.gradientText{
+  background:linear-gradient(90deg,#ffcc70,#ff758c,#d66efd);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+.hero p{
+  max-width:380px;
+  margin:16px auto 0;
+  color:#f2f2f2;
+  line-height:1.65;
+  font-family:"Hind Siliguri",sans-serif;
+}
+
+.down{
+  margin-top:24px;
+  font-size:21px;
+  animation:bounce 1.4s infinite;
+}
+
+@keyframes bounce{
+  50%{transform:translateY(7px)}
+}
+
+/* content */
+
+.content{
+  padding:45px 18px 70px;
+}
+
+.sectionTitle{
+  text-align:center;
+  margin-bottom:25px;
+}
+
+.sectionTitle span{
+  color:#ff5892;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:2.5px;
+  text-transform:uppercase;
+}
+
+.sectionTitle h2{
+  font-family:"Hind Siliguri",sans-serif;
+  margin-top:7px;
+  font-size:29px;
+}
+
+.post{
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:18px;
+  overflow:hidden;
+  background:var(--card);
+  box-shadow:0 15px 45px rgba(0,0,0,.28);
+}
+
+.postHeader{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:12px;
+}
+
+.postHeader img{
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+.postUser{
+  font-weight:600;
+  font-size:13px;
+}
+
+.location{
+  font-size:11px;
+  color:var(--muted);
+  margin-top:2px;
+}
+
+.more{
+  margin-left:auto;
+  letter-spacing:3px;
+}
+
+.postPhoto{
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  display:block;
+}
+
+.actions{
+  padding:13px 14px 7px;
+  display:flex;
+  font-size:25px;
+  gap:16px;
+}
+
+.actions span{
+  cursor:pointer;
+  transition:.2s;
+}
+
+.actions span:hover{
+  transform:scale(1.13);
+}
+
+.heart{
+  color:#ff3040;
+}
+
+.save{margin-left:auto}
+
+.likes{
+  padding:0 14px;
+  font-size:13px;
+  font-weight:600;
+}
+
+.caption{
+  padding:8px 14px 17px;
+  color:#ddd;
+  font-size:13px;
+  line-height:1.55;
+}
+
+.caption b{color:white}
+
+/* Message */
+
+.message{
+  margin-top:44px;
+  position:relative;
+  padding:30px 23px;
+  border-radius:24px;
+  background:
+    linear-gradient(#15151a,#15151a) padding-box,
+    linear-gradient(135deg,#ff8a00,#ff2d76,#8a3ffc) border-box;
+  border:1px solid transparent;
+}
+
+.quote{
+  font-size:46px;
+  line-height:.6;
+  color:#ff5e98;
+  opacity:.7;
+}
+
+.message p{
+  font-family:"Hind Siliguri",sans-serif;
+  color:#ddd;
+  line-height:1.85;
+  font-size:16px;
+  margin-top:14px;
+}
+
+.message strong{color:white}
+
+.signature{
+  margin-top:20px!important;
+  color:#ff7da9!important;
+  font-weight:600;
+}
+
+/* surprise */
+
+.surprise{
+  text-align:center;
+  margin-top:45px;
+}
+
+.surprise h3{
+  font-family:"Hind Siliguri",sans-serif;
+  font-size:24px;
+}
+
+.surprise p{
+  color:var(--muted);
+  font-size:13px;
+  margin:8px 0 18px;
+}
+
+.surpriseBtn{
+  border:0;
+  cursor:pointer;
+  color:white;
+  font-weight:700;
+  padding:14px 25px;
+  border-radius:50px;
+  background:linear-gradient(90deg,#f73375,#9b45f6);
+  box-shadow:0 10px 30px rgba(247,51,117,.25);
+  transition:.25s;
+}
+
+.surpriseBtn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 14px 35px rgba(247,51,117,.4);
+}
+
+.hiddenWish{
+  max-height:0;
+  overflow:hidden;
+  opacity:0;
+  transition:.8s ease;
+}
+
+.hiddenWish.show{
+  max-height:400px;
+  opacity:1;
+  margin-top:25px;
+}
+
+.gift{
+  font-size:60px;
+  animation:gift 1s ease infinite alternate;
+}
+
+@keyframes gift{
+  to{transform:rotate(6deg) scale(1.08)}
+}
+
+.hiddenWish h2{
+  margin-top:10px;
+  font-family:"Hind Siliguri",sans-serif;
+}
+
+.hiddenWish p{
+  font-family:"Hind Siliguri",sans-serif;
+  color:#ccc;
+  line-height:1.7;
+  max-width:350px;
+  margin:10px auto;
+}
+
+.share{
+  display:block;
+  width:100%;
+  margin-top:40px;
+  border:1px solid rgba(255,255,255,.13);
+  background:#15151a;
+  color:white;
+  padding:13px;
+  border-radius:12px;
+  cursor:pointer;
+}
+
+footer{
+  text-align:center;
+  color:#707078;
+  padding:0 10px 35px;
+  font-size:11px;
+}
+
+.floating{
+  position:fixed;
+  pointer-events:none;
+  z-index:99;
+  animation:floatUp 3.2s ease-out forwards;
+}
+
+@keyframes floatUp{
+  0%{
+    opacity:0;
+    transform:translateY(20px) scale(.5) rotate(0deg);
+  }
+  15%{opacity:1}
+  100%{
+    opacity:0;
+    transform:translateY(-100vh) scale(1.3) rotate(30deg);
+  }
+}
+
+@media(min-width:700px){
+  body{padding:30px 0}
+  .app{
+    min-height:auto;
+    border-radius:26px;
+    overflow:hidden;
+  }
+  .story{
+    min-height:820px;
+  }
+}
+
+@media(max-width:480px){
+  .app{border:none}
+}
+</style>
+</head>
+
+<body>
+
+<div class="bgGlow glow1"></div>
+<div class="bgGlow glow2"></div>
+
+<main class="app">
+
+<section class="story">
+
+  <img src="birthday.jpg" alt="Birthday Person" class="storyImage">
+  <div class="overlay"></div>
+
+  <div class="progressWrap">
+    <div class="progress"></div>
+    <div class="progress"></div>
+    <div class="progress"></div>
+  </div>
+
+  <div class="header">
+    <div class="avatarRing">
+      <img src="birthday.jpg" class="avatar" alt="">
+    </div>
+
+    <div>
+      <span class="username">offside_g4rif</span>
+      <span class="time">• now</span>
+    </div>
+
+    <button class="music" id="musicBtn" aria-label="Play music">♫</button>
+  </div>
+
+  <div class="hero">
+    <div class="small">A little **** for you</div>
+
+    <!-- এখানে নাম পরিবর্তন করবে -->
+    <h1>
+      Happy Birthday,
+      <span class="gradientText">TOKAI GARIFFF</span> 🎂
+    </h1>
+
+    <p>
+      It's your day.Wishing your dark future
+    </p>
+
+    <div class="down">⌄</div>
+  </div>
+
+</section>
+
+<section class="content">
+
+  <div class="sectionTitle">
+    <span></span>
+    <h2>একটা TOKAI ✨</h2>
+  </div>
+
+  <article class="post">
+    <div class="postHeader">
+      <img src="birthday.jpg" alt="Profile">
+
+      <div>
+        <div class="postUser">Gentle Tokai</div>
+        <div class="location">Tokai der addakhana</div>
+      </div>
+
+      <div class="more">•••</div>
+    </div>
+
+    <img src="birthday.jpg" class="postPhoto" alt="Special memory">
+
+    <div class="actions">
+      <span class="heart" id="likeBtn">♥</span>
+      <span>♡</span>
+      <span>⌁</span>
+      <span class="save">♧</span>
+    </div>
+
+    <div class="likes">
+      <span id="likeCount">1,026</span> likes
+    </div>
+
+    <div class="caption">
+      <b>Gentle Tokai</b>
+      Some people make ordinary moments feel horny.
+      Today is all about none of them. 🎂✨
+    </div>
+  </article>
+
+  <div class="message">
+    <div class="quote">“</div>
+
+    <!-- এখানে নিজের message লিখবে -->
+    <p>
+      <strong>TOKAI GARIFF,</strong><br><br>
+
+      "Take off your pant"
+      <br><br>
+      
+      <strong></strong> ❤️
+    </p>
+
+    <p class="signature">— From someone who don't cares ✨</p>
+  </div>
+
+  <div class="surprise">
+    <h3>তোমার জন্য আরও কিছু নাই... 👀</h3>
+    <p>Button-টা press কর</p>
+
+    <button class="surpriseBtn" id="surpriseBtn">
+      🎁 Open Your Surprise
+    </button>
+
+    <div class="hiddenWish" id="hiddenWish">
+      <div class="gift">🎂</div>
+      <h2>Make a wish! ✨</h2>
+      <p>
+        তোমার মনের সবচেয়ে সুন্দর ইচ্ছেটা যেন এই বছরই সত্যি না হয়।
+           
+        Happy Birthday once never! 🥳❤️
+      </p>
+    </div>
+  </div>
+
+  
+
+</section>
+
+<footer>
+  Made with 💩 just for your special day
+</footer>
+
+</main>
+
+<audio id="birthdayMusic" loop>
+  <source src="birthday.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const music = document.getElementById("birthdayMusic");
+const musicBtn = document.getElementById("musicBtn");
+const surpriseBtn = document.getElementById("surpriseBtn");
+const hiddenWish = document.getElementById("hiddenWish");
+const shareBtn = document.getElementById("shareBtn");
+const likeBtn = document.getElementById("likeBtn");
+const likeCount = document.getElementById("likeCount");
+
+let playing = false;
+let liked = false;
+
+musicBtn.addEventListener("click", async () => {
+  try {
+    if (!playing) {
+      await music.play();
+      musicBtn.textContent = "❚❚";
+      playing = true;
+    } else {
+      music.pause();
+      musicBtn.textContent = "♫";
+      playing = false;
+    }
+  } catch (e) {
+    alert("birthday.mp3 file-টি project folder-এ রাখুন।");
+  }
+});
+
+likeBtn.addEventListener("click", () => {
+  liked = !liked;
+
+  if (liked) {
+    likeBtn.textContent = "♥";
+    likeBtn.style.color = "#ff3040";
+    likeCount.textContent = "1,027";
+    createHeart();
+  } else {
+    likeBtn.textContent = "♡";
+    likeBtn.style.color = "#fff";
+    likeCount.textContent = "1,026";
+  }
+});
+
+surpriseBtn.addEventListener("click", () => {
+  hiddenWish.classList.add("show");
+  surpriseBtn.textContent = "You deserve all the happiness ❤️";
+  surpriseBtn.disabled = true;
+
+  for (let i = 0; i < 32; i++) {
+    setTimeout(createConfetti, i * 65);
+  }
+});
+
+function createHeart() {
+  const el = document.createElement("div");
+  el.className = "floating";
+  el.textContent = "❤️";
+  el.style.left = (20 + Math.random() * 60) + "vw";
+  el.style.bottom = "5vh";
+  el.style.fontSize = (18 + Math.random() * 25) + "px";
+
+  document.body.appendChild(el);
+  setTimeout(() => el.remove(), 3300);
+}
+
+function createConfetti() {
+  const icons = ["❤️","✨","🎉","🎂","💖","🌸","🥳"];
+  const el = document.createElement("div");
+
+  el.className = "floating";
+  el.textContent = icons[Math.floor(Math.random() * icons.length)];
+  el.style.left = Math.random() * 95 + "vw";
+  el.style.bottom = "-20px";
+  el.style.fontSize = (16 + Math.random() * 24) + "px";
+  el.style.animationDuration = (2.3 + Math.random() * 2) + "s";
+
+  document.body.appendChild(el);
+  setTimeout(() => el.remove(), 4500);
+}
+
+shareBtn.addEventListener("click", async () => {
+  const data = {
+    title: "A Birthday Surprise ❤️",
+    text: "তোমার জন্য একটা ছোট্ট birthday surprise 🎂❤️",
+    url: location.href
+  };
+
+  try {
+    if (navigator.share) {
+      await navigator.share(data);
+    } else {
+      await navigator.clipboard.writeText(location.href);
+      shareBtn.textContent = "✓ Link copied!";
+      setTimeout(() => {
+        shareBtn.textContent = "↗ Share this birthday wish";
+      }, 2000);
+    }
+  } catch (e) {}
+});
+
+/* মাঝে মাঝে ছোট heart animation */
+setInterval(() => {
+  if (Math.random() > .55) createHeart();
+}, 3500);
+</script>
+
+</body>
+</html>
